@@ -14,10 +14,12 @@ If you come back later in a new chat, paste the same prompt again in the same fo
 
 ## What the agent does
 
-- **Phase 1 — Interview.** Asks what you want, who it's for, where it runs, what it can cost, what data it touches. Helps you cut scope; every cut idea is saved to `LATER.md`.
+The prompt operates on three reinforcing layers — **Spec** (build the right thing), **Verify** (prove it's good), and **Persist** (rules that survive every session) — woven into every phase:
+
+- **Phase 1 — Interview.** Asks what you want, who it's for, where it runs, what it can cost, what data it touches. Helps you cut scope; every cut idea is saved to `LATER.md`. Biases toward smaller specs. Locks in a one-sentence "done" definition before moving on.
 - **Phase 1.5 — Ethics & risk check.** Scans for privacy/safety/legal tripwires before anything is built, and redesigns around them instead of just refusing.
-- **Phase 2 — Contract.** 8–20 binary success criteria in plain English. You read it, you change it, you approve it — then it's locked and saved to `CONTRACT.md`. Only you can amend it, and every amendment is recorded.
-- **Phase 3 — Loop.** Plan → build → run the full test suite → show the scoreboard. Repeats until every line is YES, with checkpoint commits at every improvement and a hard escalation rule when it's stuck (a plain-English Stuck Report ending in ONE non-technical question for you).
+- **Phase 2 — Contract.** 8–20 binary success criteria in plain English, written through an explicit quality lens. A devil's-advocate pass catches gaps before signing. You read it, you change it, you approve it — then it's locked and saved to `CONTRACT.md`. Only you can amend it, and every amendment is recorded.
+- **Phase 3 — Loop.** Plan (with verification plan) → build (≤3 criteria per iteration) → run the full test suite → show the scoreboard. Repeats until every line is YES, with checkpoint commits at every improvement and a hard escalation rule when it's stuck (a plain-English Stuck Report ending in ONE non-technical question for you).
 - **Phase 4 — Handover.** Final scoreboard with evidence, a non-coder setup guide, the re-check command, the finalized `LATER.md`, your real-world homework, and a recovery recipe for the day it breaks.
 
 ## Files it leaves in your project
@@ -31,5 +33,6 @@ If you come back later in a new chat, paste the same prompt again in the same fo
 
 ## Changelog
 
+- **v2.3** — integrated a 3-layer prompt engineering framework: **Spec** (agile bias toward smaller specs, definition-of-done checkpoint, explicit verification at every decision); **Verify** (quality dimensions defined before criteria, devil's-advocate review before signing, optional cross-model check, ≤3 criteria per loop iteration, pre-build verification plans); **Persist** (verification-plan-first rule, extractable working-style rules for `.claude.md` or equivalent).
 - **v2.2** — the contract now lives on disk (`CONTRACT.md`) and survives chat sessions, with a resume-don't-restart protocol; [HUMAN] checks are wired into the loop's exit (bundled into one sign-off sitting); retry budget counts stagnation, not attempts — progress resets it; checkpoint commits on every scoreboard improvement; mid-build feature requests are formal amendments, never quiet extras; build/test with made-up data only whenever real people's data is involved; interview asks about running costs; concrete scoreboard example; Stuck Reports saved as `STUCK.md`; the agent stays inside the project folder.
 - **v2 / v2.1** — interview-first design, ethics check, binary contract with [AUTO]/[HUMAN]/[INSPECT] tags, guardrails-first test suite, the loop with retry budget and Stuck Reports, handover protocol.
