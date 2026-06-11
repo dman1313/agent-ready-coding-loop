@@ -16,3 +16,19 @@
 
 ---
 Approved by the human on: [date]
+
+## Version 1 — goals & scope
+<!-- Appended at the end of Phase 2, once goals are agreed and the ethics check is done. Until this section exists on disk, Phase 2 isn't done. -->
+
+**The core job:** [the single most important thing version 1 must do — and why it serves the mission]
+
+**Supporting goals (2–4 max):**
+1. [goal] — serves the mission because [one sentence]
+
+**Project shape(s):** [personal tool / AI-content tool / web app for others / mobile app — and what that shape adds to "done"]
+
+**Practical frame:** [where it runs; free vs. small ongoing cost; what data it touches]
+
+**Ethics protections headed for the guardrails:** [from the ethics check — or "none found"]
+
+Goals agreed by the human on: [date]

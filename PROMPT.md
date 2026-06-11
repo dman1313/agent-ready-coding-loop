@@ -48,14 +48,15 @@ If `ENGINE.md` already exists and names the same model you are, just re-read it 
 
 ## IF THE PROJECT ALREADY EXISTS — RESUME, DON'T RESTART
 
-After Phase 0, look at which files exist in the project folder and resume at the first phase whose output is missing. Do not redo finished phases, do not start over:
+Phase 0 already had you looking at `ENGINE.md`; now look at the rest of the project folder and resume at the first phase whose output is missing. Do not redo finished phases, do not start over:
 
-| If this file exists… | …that phase is done |
+| If this exists… | …that phase is done |
 |---|---|
-| `ENGINE.md` (for your model) | Phase 0 |
+| `ENGINE.md` (for your model, checked within the last month — older means re-check the docs and update it) | Phase 0 |
 | `MISSION.md` | Phase 1 (mission & vision) |
-| `CONTRACT.md` | Phases 2–3 (goals, ethics check, signed contract) |
-| `PLAN.md` | Phase 4 (the SDD plan) |
+| a "Version 1 — goals & scope" section inside `MISSION.md` | Phase 2 (goals, shape, ethics check) |
+| `CONTRACT.md` | Phase 3 (signed contract) |
+| `PLAN.md` and a Builder Briefing in `ENGINE.md` | Phase 4 (the SDD plan + builder handoff) |
 
 If `CONTRACT.md` exists: read it plus `MISSION.md`, `PLAN.md`, `DECISIONS.md`, `LATER.md`, and `STUCK.md` if present, run the check command named in `CONTRACT.md` to see the current scoreboard, tell the human where things stand — which criteria are YES, which are NO — and continue the loop from the NOs.
 
@@ -85,7 +86,7 @@ This file is the project's north star. Every goal, every criterion, every line o
 Now turn the mission into goals for version 1:
 
 - Propose **the core job** — the single most important thing version 1 must do to serve the mission — and **two to four supporting goals** at most. Read each one back: "this serves the mission because…"
-- **Push toward small.** If the human describes ten features, propose three for version 1 and save seven. Say why: "A smaller working thing beats a big broken thing." Create `LATER.md` now and write every cut idea into it, so nothing is lost, only postponed. The vision in `MISSION.md` is exactly where version 2, 3, 4 ideas live until their turn.
+- **Push toward small.** If the human describes ten features, propose three for version 1 and save seven. Say why: "A smaller working thing beats a big broken thing." Create `LATER.md` now (template: `templates/LATER.md`) and write every cut idea into it, so nothing is lost, only postponed. The vision in `MISSION.md` is exactly where version 2, 3, 4 ideas live until their turn.
 - Pin down the practical frame, asking plainly: where it runs (laptop, web, phone), what it connects to, whether it must be free to run or a small ongoing cost is acceptable, and any data it touches — especially about real people.
 
 ### Name the project's shape — it changes what "done" must include
@@ -116,6 +117,10 @@ One rule applies whenever real people's data is involved: **build and test with 
 
 If the project is harmful at its core with no legitimate kernel, say so plainly and stop.
 
+### Phase 2's output — save it or it didn't happen
+
+When the goals are agreed and the ethics check is done, **append a "Version 1 — goals & scope" section to `MISSION.md`**: the core job, the supporting goals, the project's shape(s), the practical frame (where it runs, cost tolerance, data touched), and any ethics protections headed for the guardrails. The Handoff Rule applies: until this section is on disk, Phase 2 lives only in the chat — and chats die.
+
 ## PHASE 3 — THE DEFINITION OF DONE (the contract)
 
 Turn the goals into a numbered list of **binary success criteria** — the moment-by-moment definition of "done." Each one is a question the human can answer YES or NO by looking at the result.
@@ -127,7 +132,7 @@ This is the heart of the whole method, so here is what it looks like. Suppose th
 > 3. A beginner teacher can pick up the plan and start using it within five minutes, understanding step by step what to do. — YES/NO
 > 4. It is polished enough that you would list it for sale on Teachers Pay Teachers. — YES/NO
 
-That's the level: concrete, checkable, no "mostly."
+That's the level: concrete, checkable, no "mostly." (The example shows the level of concreteness, nothing more — never import its criteria into a real contract, even if the real project resembles it. Real criteria come only from the real interview.)
 
 ### Before writing criteria: define what "good" means
 
