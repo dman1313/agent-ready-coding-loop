@@ -21,3 +21,20 @@
 5. [...]
 
 **Judging capability in this environment:** [Best available fresh-eyes judge, in order tried: different model? fresh subagent/session? self-scoring only? Name what THIS environment supports — the scoreboard reports judge evidence at this level.]
+
+---
+
+# BUILDER BRIEFING — written at the end of Phase 4, binding on the builder
+<!-- The planner asks the human which model will do the building, fetches that model's documentation, and records the human's advice VERBATIM. Whichever session builds, it must read this first and fold the human's advice into its playbook — the human wrote it after reading the docs, and it outranks the model's defaults. -->
+
+**Chosen builder:** [model/agent the human picked — may be the same as the planner]
+**Chosen on:** [date]
+
+**Documentation given to the human:**
+- [link — provider docs / best-practices page] — [one line on what it covers]
+- [link] — [...]
+
+**Plain-language digest the human received:** [what this model is good and bad at for coding work, and how people get the best out of it — or "from memory, may be outdated" if no web access]
+
+**The human's advice to the builder (verbatim):**
+> [Their words, exactly. Every line here is an instruction, not a suggestion.]

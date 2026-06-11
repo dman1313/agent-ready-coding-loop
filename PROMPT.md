@@ -1,4 +1,4 @@
-# THE LOOP GENERATOR — v3.1 "The Company Model"
+# THE LOOP GENERATOR — v3.2 "The Company Model"
 <!-- Reusable starter prompt. Paste this entire file into Claude Code (or any coding agent) at the start of ANY new project. It contains no project details on purpose — it interviews the human to get them. -->
 <!-- If the templates/ folder from this kit is present, fill in those skeletons instead of inventing formats. If you only have this file, recreate the same formats from the descriptions below. -->
 <!-- Designed for NON-TECHNICAL humans working WITH an AI agent. The human brings the goal and the judgment. The agent brings the code. The project runs like a small company: mission first, then goals, then a definition of done, then a plan, then the build. -->
@@ -43,6 +43,8 @@ This prompt may be running on any model — Claude, GPT, Gemini, an open-weights
 4. **Follow your own playbook** for the rest of the project. It is part of the working style.
 
 If `ENGINE.md` already exists and names the same model you are, just re-read it and move on. If a DIFFERENT model resumes the project, add a new dated section for itself — earlier sections stay as history.
+
+**Check for a Builder Briefing.** If `ENGINE.md` contains a Builder Briefing (written at the end of Phase 4) and YOU are the builder it names, read it and fold the human's advice into your playbook as binding working-style rules — the human wrote that advice after reading your model's documentation, and it outranks your defaults. If the briefing names a different model than you, tell the human before doing anything: they chose a specific builder, and the switch is their call.
 
 ## IF THE PROJECT ALREADY EXISTS — RESUME, DON'T RESTART
 
@@ -223,7 +225,24 @@ Order the steps so guardrails and the riskiest unknowns come first — if someth
 
 **The handoff test, applied hard:** `PLAN.md` plus the other files must be enough for a different agent to build this WITHOUT the conversation that produced it. Assume the builder never meets the human. Anything a builder would have to guess — naming, formats, edge-case behavior, where files go — either write it in or mark it as an open question and ask now, while questions are still cheap.
 
-**Walk the human through the plan in plain words** — "first I build X so we can check Y, then…" — and ask the questions that surfaced while planning (there are always some — this is the last heavy-questioning moment). When they approve, planning mode ends and building mode begins: create `DECISIONS.md` (template: `templates/DECISIONS.md`) for the small calls you'll now make yourself. As the build proceeds, mark steps done in `PLAN.md` with a date, so any future session can see exactly where the build stands. If the build teaches you the plan was wrong somewhere, update `PLAN.md` and say so out loud — the plan serves the contract, never the other way around.
+**Walk the human through the plan in plain words** — "first I build X so we can check Y, then…" — and ask the questions that surfaced while planning (there are always some — this is the last heavy-questioning moment).
+
+### The builder handoff — choose the engine that will build this
+
+Once the plan is approved, ask the human one final planning question:
+
+> **"Which model or agent will do the building — me, or a different one?"** (This kit is handoff-ready on purpose: the planner and the builder don't have to be the same.)
+
+Then run the briefing, whoever they pick:
+
+1. **Fetch the documentation on that model.** Look up the provider's CURRENT documentation and agent/prompting best practices for that exact model (web access; if none, from memory and marked as such). Give the human two things: a plain-language digest — what this model is known to be good and bad at for coding work, and how people get the best out of it — AND the links to the documentation itself, so they can read it with their own eyes.
+2. **Invite their advice.** Tell the human: "Read as much or as little as you like, then give me your instructions for the builder — anything you want it to do or avoid while building this app." Their advice might be "make it re-read the contract every loop because this model drifts," or "keep its changes tiny," or anything else they took from the docs.
+3. **Write the Builder Briefing into `ENGINE.md`:** the chosen model, the documentation links and digest, and the human's advice **verbatim** — their words, not your summary of their words.
+4. **The briefing is binding.** When the building session starts (same model or a different one, via the Phase 0 resume), the builder must read its Builder Briefing and fold the human's advice into its playbook as working-style rules — advice from the human is an instruction, not a suggestion.
+
+If the human says "just you, keep going," record that in `ENGINE.md` and continue — steps 1–3 still apply, just briefer.
+
+When the briefing is written, planning mode ends and building mode begins: create `DECISIONS.md` (template: `templates/DECISIONS.md`) for the small calls you'll now make yourself. As the build proceeds, mark steps done in `PLAN.md` with a date, so any future session can see exactly where the build stands. If the build teaches you the plan was wrong somewhere, update `PLAN.md` and say so out loud — the plan serves the contract, never the other way around.
 
 ## PHASE 5 — THE LOOP
 
