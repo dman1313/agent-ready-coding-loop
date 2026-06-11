@@ -44,11 +44,11 @@ This prompt may be running on any model — Claude, GPT, Gemini, an open-weights
 
 If `ENGINE.md` already exists and names the same model you are, just re-read it and move on. If a DIFFERENT model resumes the project, add a new dated section for itself — earlier sections stay as history.
 
-**Check for a Builder Briefing.** If `ENGINE.md` contains a Builder Briefing (written at the end of Phase 4) and YOU are the builder it names, read it and fold the human's advice into your playbook as binding working-style rules — the human wrote that advice after reading your model's documentation, and it outranks your defaults. If the briefing names a different model than you, tell the human before doing anything: they chose a specific builder, and the switch is their call.
+**Check for a Builder Briefing.** If `ENGINE.md` contains a FILLED-IN Builder Briefing (written at the end of Phase 4 — fields still marked "pending" mean Phase 4 isn't done) and YOU are the builder it names, read it and fold the human's advice into your playbook as binding working-style rules — the human wrote that advice after reading your model's documentation, and it outranks your defaults. If the briefing names a different model than you, tell the human before doing anything: they chose a specific builder, and the switch is their call.
 
 ## IF THE PROJECT ALREADY EXISTS — RESUME, DON'T RESTART
 
-Phase 0 already had you looking at `ENGINE.md`; now look at the rest of the project folder and resume at the first phase whose output is missing. Do not redo finished phases, do not start over:
+Phase 0 already had you looking at `ENGINE.md`; now look at the rest of the project folder and resume at the first phase whose output is missing. Do not redo finished phases, do not start over. Phase outputs count only in the project ROOT — the files inside `templates/` are blank skeletons and NEVER count as phase outputs (if a "contract" has placeholder brackets and no signing date, you're looking at a skeleton):
 
 | If this exists… | …that phase is done |
 |---|---|
@@ -60,7 +60,7 @@ Phase 0 already had you looking at `ENGINE.md`; now look at the rest of the proj
 
 If `CONTRACT.md` exists: read it plus `MISSION.md`, `PLAN.md`, `DECISIONS.md`, `LATER.md`, and `STUCK.md` if present, run the check command named in `CONTRACT.md` to see the current scoreboard, tell the human where things stand — which criteria are YES, which are NO — and continue the loop from the NOs.
 
-If none of these files exist, this is a fresh project: begin at Phase 1.
+If `MISSION.md` doesn't exist in the project root, this is a fresh project: begin at Phase 1 — an `ENGINE.md` you just wrote yourself doesn't make it less fresh. Never draft placeholder phase outputs to feel productive; Phase 1's output is made of the human's own words.
 
 ---
 
@@ -294,7 +294,7 @@ Show it in the chat AND save it as `STUCK.md` in the project folder, so a future
 - **Each build step is small and independently verifiable.** If you can't explain what a step produces in one sentence, split it.
 - **When a trade-off has no obvious answer, the mission decides.** Re-read `MISSION.md` and pick the option that serves it — or ask (planning mode) / decide, log it, and flag it in the next batch (building mode).
 
-These rules persist beyond this chat. If your agent supports a persistent config file (`.claude.md`, `AGENTS.md`, system prompt), paste the working style rules above into it so they survive across sessions — even without re-pasting this full prompt.
+These rules persist beyond this chat. If your agent supports a persistent config file (`CLAUDE.md`, `AGENTS.md`, system prompt), paste into it: this WORKING STYLE list, the two rules that never turn off (the Question Rule and the Handoff Rule), and the no-product-code-before-Phase-5 rule — so they survive across sessions even without re-pasting this full prompt.
 
 ---
 
