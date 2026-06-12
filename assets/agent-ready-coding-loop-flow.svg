@@ -1,0 +1,219 @@
+<svg width="1400" height="900" viewBox="0 0 1400 900" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Agent Ready Coding Loop Flow</title>
+  <desc id="desc">Flow chart showing the Agent Ready Coding Loop from interrogation through SDD, contract, plan, continuous coding, debugging, review, and handoff.</desc>
+  <defs>
+    <linearGradient id="blue" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2563EB"/>
+      <stop offset="1" stop-color="#0F766E"/>
+    </linearGradient>
+    <linearGradient id="green" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#16A34A"/>
+      <stop offset="1" stop-color="#0F766E"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#0F172A" flood-opacity="0.12"/>
+    </filter>
+    <style>
+      .bg { fill: #F8FAFC; }
+      .title { font: 800 42px ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #0F172A; }
+      .subtitle { font: 500 18px ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #475569; }
+      .section { font: 800 18px ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #0F172A; }
+      .label { font: 800 20px ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #0F172A; }
+      .body { font: 500 14px ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #334155; }
+      .small { font: 700 12px ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #475569; }
+      .mono { font: 700 15px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; fill: #0F172A; }
+      .node { fill: white; stroke: #CBD5E1; stroke-width: 1.5; filter: url(#shadow); }
+      .rail { fill: white; stroke: #CBD5E1; stroke-width: 1.5; filter: url(#shadow); }
+      .arrow { stroke: #334155; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; marker-end: url(#arrow); }
+      .loop { stroke: #15803D; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; marker-end: url(#arrowGreen); }
+      .dashedBlue { stroke: #2563EB; stroke-width: 1.8; stroke-dasharray: 7 8; }
+      .dashedGreen { stroke: #16A34A; stroke-width: 1.8; stroke-dasharray: 7 8; }
+    </style>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#334155"/>
+    </marker>
+    <marker id="arrowGreen" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#15803D"/>
+    </marker>
+  </defs>
+
+  <rect class="bg" width="1400" height="900"/>
+  <circle cx="134" cy="126" r="88" fill="#DBEAFE" opacity="0.45"/>
+  <circle cx="1258" cy="768" r="116" fill="#DCFCE7" opacity="0.45"/>
+  <circle cx="1120" cy="100" r="70" fill="#E0F2FE" opacity="0.55"/>
+
+  <g transform="translate(392 45)">
+    <rect x="-76" y="-3" width="56" height="56" rx="16" fill="url(#blue)"/>
+    <path d="M-61 25h18M-52 16l-9 9 9 9M-38 16l9 9-9 9" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <text class="title" x="0" y="35">Agent Ready Coding Loop</text>
+    <text class="subtitle" x="4" y="67">A high-end SDD framework for coding agents and human-directed software</text>
+  </g>
+
+  <g transform="translate(72 145)">
+    <rect class="rail" width="270" height="560" rx="18"/>
+    <text class="section" x="28" y="42">Source Rail</text>
+    <text class="body" x="28" y="70">Ground decisions before coding.</text>
+    <g transform="translate(28 110)">
+      <circle cx="22" cy="22" r="22" fill="#DBEAFE"/>
+      <text class="mono" x="11" y="28">1</text>
+      <text class="label" x="62" y="20">Official Docs</text>
+      <text class="body" x="62" y="45">Frameworks, APIs, auth,</text>
+      <text class="body" x="62" y="65">deployment, payments.</text>
+    </g>
+    <g transform="translate(28 225)">
+      <circle cx="22" cy="22" r="22" fill="#CCFBF1"/>
+      <text class="mono" x="11" y="28">2</text>
+      <text class="label" x="62" y="20">Context7</text>
+      <text class="body" x="62" y="45">Use when available for</text>
+      <text class="body" x="62" y="65">current library context.</text>
+    </g>
+    <g transform="translate(28 340)">
+      <circle cx="22" cy="22" r="22" fill="#E0E7FF"/>
+      <text class="mono" x="11" y="28">3</text>
+      <text class="label" x="62" y="20">Cite Sources</text>
+      <text class="body" x="62" y="45">Record source links in</text>
+      <text class="body" x="62" y="65">SDD, plan, or handoff.</text>
+    </g>
+    <g transform="translate(28 470)">
+      <rect x="0" y="0" width="214" height="54" rx="12" fill="#EFF6FF" stroke="#BFDBFE"/>
+      <text class="small" x="18" y="23">Rule: verify before build.</text>
+      <text class="small" x="18" y="42">Mark unknowns UNVERIFIED.</text>
+    </g>
+  </g>
+
+  <g transform="translate(430 140)">
+    <g>
+      <rect class="node" width="540" height="58" rx="14"/>
+      <circle cx="36" cy="29" r="20" fill="#DBEAFE"/>
+      <text class="mono" x="27" y="35">1</text>
+      <text class="label" x="78" y="25">Interrogation</text>
+      <text class="body" x="280" y="23">Ask one question at a time.</text>
+      <text class="body" x="280" y="43">Narrow the idea until specific.</text>
+    </g>
+    <path class="arrow" d="M270 64v35"/>
+
+    <g transform="translate(0 105)">
+      <rect class="node" width="540" height="58" rx="14"/>
+      <circle cx="36" cy="29" r="20" fill="#DBEAFE"/>
+      <text class="mono" x="27" y="35">2</text>
+      <text class="label" x="78" y="25">Mission + Vision</text>
+      <text class="body" x="280" y="23">Mission keeps v1 focused.</text>
+      <text class="body" x="280" y="43">Vision feeds LATER.md.</text>
+    </g>
+    <path class="arrow" d="M270 169v35"/>
+
+    <g transform="translate(0 210)">
+      <rect class="node" width="540" height="58" rx="14"/>
+      <circle cx="36" cy="29" r="20" fill="#DBEAFE"/>
+      <text class="mono" x="27" y="35">3</text>
+      <text class="label" x="78" y="25">SDD.md</text>
+      <text class="body" x="280" y="23">High-end spec: scope, risk,</text>
+      <text class="body" x="280" y="43">architecture, tests, assumptions.</text>
+    </g>
+    <path class="arrow" d="M270 274v35"/>
+
+    <g transform="translate(0 315)">
+      <rect class="node" width="540" height="58" rx="14"/>
+      <circle cx="36" cy="29" r="20" fill="#FEF3C7"/>
+      <text class="mono" x="27" y="35">4</text>
+      <text class="label" x="78" y="25">Skeptical Review</text>
+      <text class="body" x="280" y="23">Challenge gaps, risk, ambiguity,</text>
+      <text class="body" x="280" y="43">and likely disappointment.</text>
+    </g>
+    <path class="arrow" d="M270 379v35"/>
+
+    <g transform="translate(0 420)">
+      <rect class="node" width="540" height="58" rx="14"/>
+      <circle cx="36" cy="29" r="20" fill="#DBEAFE"/>
+      <text class="mono" x="27" y="35">5</text>
+      <text class="label" x="78" y="25">CONTRACT.md</text>
+      <text class="body" x="280" y="23">Locked YES/NO criteria with</text>
+      <text class="body" x="280" y="43">proof tags: AUTO, HUMAN, INSPECT.</text>
+    </g>
+    <path class="arrow" d="M270 484v35"/>
+
+    <g transform="translate(0 525)">
+      <rect class="node" width="540" height="58" rx="14"/>
+      <circle cx="36" cy="29" r="20" fill="#DBEAFE"/>
+      <text class="mono" x="27" y="35">6</text>
+      <text class="label" x="78" y="25">PLAN.md</text>
+      <text class="body" x="280" y="23">Small slices, risk-first work,</text>
+      <text class="body" x="280" y="43">rubrics, checkpoints, verification.</text>
+    </g>
+    <path class="arrow" d="M270 589v35"/>
+
+    <g transform="translate(0 630)">
+      <rect class="node" width="540" height="78" rx="16" fill="#F0FDF4" stroke="#16A34A" stroke-width="2" filter="url(#shadow)"/>
+      <circle cx="36" cy="39" r="22" fill="url(#green)"/>
+      <text class="mono" x="27" y="45" fill="white">7</text>
+      <text class="label" x="78" y="34" fill="#14532D">Continuous Coding Loop</text>
+      <text class="body" x="280" y="30">Code -> test -> check -> commit</text>
+      <text class="body" x="280" y="52">while the rubric says continue.</text>
+    </g>
+  </g>
+
+  <g transform="translate(430 795)">
+    <rect class="node" width="250" height="58" rx="14" fill="#FFFBEB" stroke="#F59E0B"/>
+    <circle cx="36" cy="29" r="20" fill="#FEF3C7"/>
+    <text class="mono" x="27" y="35">8</text>
+    <text class="label" x="78" y="25">Debug If Broken</text>
+    <text class="body" x="78" y="46">Fix root cause, add guard.</text>
+  </g>
+  <g transform="translate(720 795)">
+    <rect class="node" width="250" height="58" rx="14"/>
+    <circle cx="36" cy="29" r="20" fill="#DBEAFE"/>
+    <text class="mono" x="27" y="35">9</text>
+    <text class="label" x="78" y="25">Review + Simplify</text>
+    <text class="body" x="78" y="46">Correct, secure, simple.</text>
+  </g>
+  <g transform="translate(1010 795)">
+    <rect class="node" width="250" height="58" rx="14"/>
+    <circle cx="36" cy="29" r="20" fill="#DBEAFE"/>
+    <text class="mono" x="23" y="35">10</text>
+    <text class="label" x="78" y="25">HANDOFF.md</text>
+    <text class="body" x="78" y="46">Run, re-check, recover.</text>
+  </g>
+
+  <path class="arrow" d="M700 848h18"/>
+  <path class="arrow" d="M990 848h18"/>
+  <path class="loop" d="M555 795 C500 760 490 722 430 709"/>
+  <path class="loop" d="M970 669 C1048 668 1070 716 970 823"/>
+
+  <g transform="translate(1060 145)">
+    <rect class="rail" width="270" height="300" rx="18"/>
+    <text class="section" x="28" y="42">Scoreboard Rail</text>
+    <text class="mono" x="28" y="76">./check</text>
+    <text class="body" x="28" y="106">Every criterion prints YES or NO</text>
+    <text class="body" x="28" y="126">with evidence the human can read.</text>
+    <g transform="translate(28 165)">
+      <rect x="0" y="0" width="214" height="42" rx="10" fill="#F0FDF4" stroke="#BBF7D0"/>
+      <text class="small" x="16" y="26">GUARDRAILS FIRST</text>
+    </g>
+    <g transform="translate(28 224)">
+      <rect x="0" y="0" width="214" height="42" rx="10" fill="#EFF6FF" stroke="#BFDBFE"/>
+      <text class="small" x="16" y="26">EVIDENCE REQUIRED</text>
+    </g>
+  </g>
+
+  <g transform="translate(1060 500)">
+    <rect class="rail" width="270" height="205" rx="18"/>
+    <text class="section" x="28" y="42">Human Gates</text>
+    <text class="body" x="28" y="72">The human approves meaning,</text>
+    <text class="body" x="28" y="92">not implementation details.</text>
+    <text class="small" x="28" y="130">Gate A: SDD approved</text>
+    <text class="small" x="28" y="158">Gate B: Contract approved</text>
+    <text class="small" x="28" y="186">Gate C: Plan approved</text>
+  </g>
+
+  <path class="dashedBlue" d="M342 282h88"/>
+  <path class="dashedBlue" d="M342 387h88"/>
+  <path class="dashedBlue" d="M342 492h88"/>
+  <path class="dashedGreen" d="M970 170h90"/>
+  <path class="dashedGreen" d="M970 590h90"/>
+  <path class="dashedGreen" d="M970 815h90"/>
+
+  <g transform="translate(377 858)">
+    <rect x="0" y="0" width="646" height="34" rx="17" fill="white" stroke="#CBD5E1"/>
+    <text class="small" x="28" y="22">Core principle: interrogate clearly, specify deeply, build continuously, debug honestly, prove everything.</text>
+  </g>
+</svg>

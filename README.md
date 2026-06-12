@@ -4,6 +4,8 @@
 
 Agent Ready Coding Loop is a reusable workflow for Claude Code, Codex, ChatGPT, Cursor, Gemini, Mimo, and other coding agents. It is designed for beginner and intermediate humans who want professional-grade software without needing to read code to manage the project.
 
+![Agent Ready Coding Loop flowchart](assets/agent-ready-coding-loop-flow.svg)
+
 The framework teaches agents to do the work a strong senior engineer would do before, during, and after coding:
 
 - interrogate the idea until it is specific;
@@ -207,4 +209,3 @@ The highest-value contributions are:
 - compatibility notes for more agents;
 - examples of completed projects using the loop;
 - improvements that make the framework clearer for beginners without weakening engineering rigor.
-
