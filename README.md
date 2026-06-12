@@ -1,38 +1,210 @@
-# The Loop Generator
+# Agent Ready Coding Loop
 
-A reusable starter prompt that turns a coding agent (Claude Code, Cursor, Codex, anything similar) into a patient interviewer, contract-writer, and loop-driven builder — designed for **non-technical humans** who want working software without reading a line of code.
+**A spec-driven coding-agent framework for turning plain-language ideas into verified software.**
 
-The core idea: the human's power is not in the code, it's in the **contract** — a list of plain-English, YES/NO success criteria the agent may never weaken — and the **scoreboard** — one command the human can run themselves that prints YES or NO for every criterion, forever.
+Agent Ready Coding Loop is a reusable workflow for Claude Code, Codex, ChatGPT, Cursor, Gemini, Mimo, and other coding agents. It is designed for beginner and intermediate humans who want professional-grade software without needing to read code to manage the project.
 
-## How to use it
+The framework teaches agents to do the work a strong senior engineer would do before, during, and after coding:
 
-1. Open your coding agent in a fresh, empty project folder.
-2. Paste the entire contents of [PROMPT.md](PROMPT.md) as your first message.
-3. Answer its questions in plain English. It interviews first — no code gets written until you've approved the contract.
+- interrogate the idea until it is specific;
+- define the mission and vision;
+- write a high-quality SDD;
+- convert the SDD into locked success criteria;
+- plan small verified implementation slices;
+- keep coding while the continuation rubric says it is safe;
+- stop and debug when broken;
+- verify everything through a human-readable scoreboard;
+- review, simplify, and hand off the project.
 
-If you come back later in a new chat, paste the same prompt again in the same folder: it finds `CONTRACT.md` and resumes where it left off instead of restarting.
+## Why This Exists
 
-## What the agent does
+Most AI coding failures are not caused by bad syntax. They are caused by weak project definition:
 
-The prompt operates on three reinforcing layers — **Spec** (build the right thing), **Verify** (prove it's good), and **Persist** (rules that survive every session) — woven into every phase:
+- vague goals;
+- missing constraints;
+- no success criteria;
+- no durable plan;
+- no debugging discipline;
+- no proof that the final result matches what the human meant.
 
-- **Phase 1 — Interview.** Asks what you want, who it's for, where it runs, what it can cost, what data it touches. Helps you cut scope; every cut idea is saved to `LATER.md`. Biases toward smaller specs. Locks in a one-sentence "done" definition before moving on.
-- **Phase 1.5 — Ethics & risk check.** Scans for privacy/safety/legal tripwires before anything is built, and redesigns around them instead of just refusing.
-- **Phase 2 — Contract.** 8–20 binary success criteria in plain English, written through an explicit quality lens. A devil's-advocate pass catches gaps before signing. You read it, you change it, you approve it — then it's locked and saved to `CONTRACT.md`. Only you can amend it, and every amendment is recorded.
-- **Phase 3 — Loop.** Plan (with verification plan) → build (≤3 criteria per iteration) → run the full test suite → show the scoreboard. Repeats until every line is YES, with checkpoint commits at every improvement and a hard escalation rule when it's stuck (a plain-English Stuck Report ending in ONE non-technical question for you).
-- **Phase 4 — Handover.** Final scoreboard with evidence, a non-coder setup guide, the re-check command, the finalized `LATER.md`, your real-world homework, and a recovery recipe for the day it breaks.
+Agent Ready Coding Loop fixes that by making the agent create durable project artifacts before and during the build.
 
-## Files it leaves in your project
+The human does not need to inspect code. The human controls the work through:
 
-| File | What it is |
+- `SDD.md`: the shared understanding;
+- `CONTRACT.md`: the locked definition of done;
+- `PLAN.md`: the implementation path;
+- `./check`: the proof command;
+- `HANDOFF.md`: the run, recovery, and maintenance guide.
+
+## The Theory
+
+This repo is built around one idea:
+
+> A beginner should not have to become technical to direct a technical project. The agent must translate the human's goal into professional engineering artifacts, then use those artifacts as guardrails while coding.
+
+The loop combines several practices now common across modern agentic coding workflows:
+
+- **Spec-driven development**: create a durable spec before code.
+- **Context-driven development**: keep persistent files agents can reload across sessions.
+- **Contract-driven verification**: define YES/NO success criteria before building.
+- **Continuous agent loops**: let the agent keep coding while safe instead of pausing after every tiny step.
+- **Stop-the-line debugging**: stop feature work when anything breaks.
+- **Doubt-driven review**: challenge specs, contracts, and non-trivial decisions before they stand.
+- **Source-grounded implementation**: use official docs and Context7 when available for current framework/API context.
+
+For a deeper explanation, see [docs/THEORY.md](docs/THEORY.md).
+
+## Quick Start
+
+Point your coding agent at this repo and say:
+
+```text
+Follow these instructions when making any project or coding project.
+```
+
+If your agent does not automatically read repo instructions, paste the contents of `PROMPT.md` as the first message.
+
+## The v2.4 Workflow
+
+```text
+Interrogation
+-> Mission and vision
+-> SDD.md
+-> Skeptical SDD review
+-> CONTRACT.md
+-> PLAN.md
+-> Continuous build/check loop
+-> Debug loop when broken
+-> Review and simplification
+-> HANDOFF.md
+```
+
+## What The Agent Creates
+
+| File | Purpose |
 |---|---|
-| `CONTRACT.md` | The signed success criteria, plus amendment history |
-| `LATER.md` | Every postponed idea — raw material for version 2 |
-| `./check` (or similar) | One command that prints the plain-English scoreboard |
-| `STUCK.md` | Only appears if blocked — what failed and the one decision needed from you |
+| `SDD.md` | The high-end spec-driven development document |
+| `CONTRACT.md` | Locked YES/NO success criteria and proof plan |
+| `PLAN.md` | Ordered tasks, risks, checkpoints, and rubrics |
+| `LATER.md` | Good ideas postponed out of version 1 |
+| `DEBUG.md` | Non-trivial debugging evidence and root-cause notes |
+| `STUCK.md` | A blocker report with one non-technical human question |
+| `HANDOFF.md` | Run guide, re-check guide, recovery recipe, and maintenance notes |
+| `./check` | One command that prints the project scoreboard |
 
-## Changelog
+## The Continuous Coding Rubric
 
-- **v2.3** — integrated a 3-layer prompt engineering framework: **Spec** (agile bias toward smaller specs, definition-of-done checkpoint, explicit verification at every decision); **Verify** (quality dimensions defined before criteria, devil's-advocate review before signing, optional cross-model check, ≤3 criteria per loop iteration, pre-build verification plans); **Persist** (verification-plan-first rule, extractable working-style rules for `.claude.md` or equivalent).
-- **v2.2** — the contract now lives on disk (`CONTRACT.md`) and survives chat sessions, with a resume-don't-restart protocol; [HUMAN] checks are wired into the loop's exit (bundled into one sign-off sitting); retry budget counts stagnation, not attempts — progress resets it; checkpoint commits on every scoreboard improvement; mid-build feature requests are formal amendments, never quiet extras; build/test with made-up data only whenever real people's data is involved; interview asks about running costs; concrete scoreboard example; Stuck Reports saved as `STUCK.md`; the agent stays inside the project folder.
-- **v2 / v2.1** — interview-first design, ethics check, binary contract with [AUTO]/[HUMAN]/[INSPECT] tags, guardrails-first test suite, the loop with retry budget and Stuck Reports, handover protocol.
+The agent keeps coding if:
+
+- at least one contract criterion is still NO;
+- the next step is inside the approved SDD and contract;
+- the next slice targets no more than 1-3 criteria;
+- the verification method is known before coding;
+- no hard guardrail is failing;
+- the same failure has not repeated twice;
+- no new human decision is needed;
+- scope, cost, data use, and risk do not change.
+
+The agent stops feature work and debugs if:
+
+- a test fails;
+- the build breaks;
+- runtime behavior differs from expected behavior;
+- a previously YES criterion turns NO;
+- the root cause is unclear.
+
+This is what lets the loop keep moving without constantly asking the human for permission.
+
+## Compatible Agents
+
+This repo includes thin compatibility pointers for:
+
+- Claude Code: `CLAUDE.md`
+- Gemini CLI: `GEMINI.md`
+- ChatGPT / Codex: `CHATGPT.md`
+- Mimo: `MIMO.md`
+- Cursor: `.cursor/rules/agent-ready-loop.mdc`
+- Generic agents: `GENERIC_AGENT.md`
+
+All compatibility files point back to `AGENTS.md`, which is the source of truth.
+
+## Repo Structure
+
+```text
+.
+├── AGENTS.md
+├── PROMPT.md
+├── README.md
+├── USE_WITH_ANY_AGENT.md
+├── CLAUDE.md
+├── GEMINI.md
+├── CHATGPT.md
+├── MIMO.md
+├── GENERIC_AGENT.md
+├── .cursor/rules/agent-ready-loop.mdc
+├── docs/
+│   ├── THEORY.md
+│   └── IMPLEMENTATION_MODEL.md
+└── templates/
+    ├── SDD.md
+    ├── CONTRACT.md
+    ├── PLAN.md
+    ├── DEBUG.md
+    ├── STUCK.md
+    ├── HANDOFF.md
+    └── LATER.md
+```
+
+## Who This Is For
+
+Use this framework if:
+
+- you are a beginner who wants an agent to build software without guessing;
+- you are an intermediate builder who wants stronger specs and tests;
+- you are making repeatable agent workflows;
+- you are building with multiple coding agents;
+- you want agents to keep working safely after success criteria are defined.
+
+## What Makes It Different
+
+Many prompts tell agents to "build an app." This framework tells agents how to run the whole project:
+
+- ask better questions;
+- write the SDD;
+- challenge the SDD;
+- lock the contract;
+- plan small slices;
+- code continuously while safe;
+- debug systematically;
+- prove progress through a scoreboard;
+- hand off the result so another agent can resume later.
+
+## Status
+
+Current version: **v2.4 - High-End SDD Agent Loop**
+
+This version adds:
+
+- one-question-at-a-time interrogation mode;
+- mission and vision;
+- `SDD.md` as the main spec artifact;
+- skeptical SDD and contract reviews;
+- Context7 source-check guidance;
+- continuous coding rubric;
+- debugging, ask-human, stuck, and handoff rubrics;
+- compatibility instructions for major coding agents;
+- reusable templates.
+
+## Contributing
+
+Contributions are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md).
+
+The highest-value contributions are:
+
+- better rubrics;
+- better templates;
+- compatibility notes for more agents;
+- examples of completed projects using the loop;
+- improvements that make the framework clearer for beginners without weakening engineering rigor.
+
