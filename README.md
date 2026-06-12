@@ -57,6 +57,12 @@ The loop combines several practices now common across modern agentic coding work
 
 For a deeper explanation, see [docs/THEORY.md](docs/THEORY.md).
 
+## Acknowledgements
+
+This framework was informed by public agentic-coding practices and prior work, including Addy Osmani's [`agent-skills`](https://github.com/addyosmani/agent-skills) repository and official guidance from OpenAI, Anthropic, Cursor, Google Gemini CLI, and Context7.
+
+See [ACKNOWLEDGEMENTS.md](ACKNOWLEDGEMENTS.md) for citations and relationship notes.
+
 ## Quick Start
 
 Point your coding agent at this repo and say:
@@ -138,6 +144,7 @@ All compatibility files point back to `AGENTS.md`, which is the source of truth.
 ├── AGENTS.md
 ├── PROMPT.md
 ├── README.md
+├── ACKNOWLEDGEMENTS.md
 ├── USE_WITH_ANY_AGENT.md
 ├── CLAUDE.md
 ├── GEMINI.md

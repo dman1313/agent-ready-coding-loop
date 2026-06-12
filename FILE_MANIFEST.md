@@ -6,6 +6,7 @@
 - `PROMPT.md`: pasteable starter prompt for agents that do not auto-load repo instructions.
 - `AGENTS.md`: source-of-truth instructions for any coding agent.
 - `USE_WITH_ANY_AGENT.md`: short quick-start for pointing any agent at the repo.
+- `ACKNOWLEDGEMENTS.md`: citations and prior-work notes.
 - `CONTRIBUTING.md`: contribution guidance for public collaboration.
 - `SECURITY.md`: security reporting and secret-handling guidance.
 - `PULL_REQUEST.md`: ready-to-use PR summary for the v2.4 upgrade.

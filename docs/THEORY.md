@@ -6,6 +6,8 @@ Agent Ready Coding Loop is based on a simple observation:
 
 This framework turns that observation into a repeatable process.
 
+This work was informed by public agentic-coding practices and prior art. See [ACKNOWLEDGEMENTS.md](../ACKNOWLEDGEMENTS.md) for citations, including Addy Osmani's `agent-skills` repository and official guidance from OpenAI, Anthropic, Cursor, Google Gemini CLI, and Context7.
+
 ## 1. The Human Should Control Outcomes, Not Code
 
 Beginner and intermediate humans often cannot judge whether code is correct by reading files. That does not mean they cannot direct software projects.
@@ -224,4 +226,3 @@ The human supplies judgment.
 The agent supplies engineering discipline.
 
 The artifacts keep both aligned.
-
