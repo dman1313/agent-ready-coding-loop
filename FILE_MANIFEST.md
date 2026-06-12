@@ -3,6 +3,8 @@
 ## Core
 
 - `README.md`: explains the framework and how to use it.
+- `assets/agent-ready-coding-loop-flow.svg`: GitHub README flowchart image.
+- `assets/agent-ready-coding-loop-flow-social.png`: Twitter/X-friendly share image.
 - `PROMPT.md`: pasteable starter prompt for agents that do not auto-load repo instructions.
 - `AGENTS.md`: source-of-truth instructions for any coding agent.
 - `USE_WITH_ANY_AGENT.md`: short quick-start for pointing any agent at the repo.
